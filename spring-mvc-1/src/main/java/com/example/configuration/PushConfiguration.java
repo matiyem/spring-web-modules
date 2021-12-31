@@ -1,0 +1,36 @@
+package com.example.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+/**
+ * created by Atiye Mousavi
+ * Date: 11/26/2021
+ * Time: 5:26 PM
+ **/
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = "com.example.push.controller")
+public class PushConfiguration implements WebMvcConfigurer {
+
+    @Bean
+    public InternalResourceViewResolver jspViewResolver(){
+        //این برای کانفیگ کردن فایل ها در مسیر مریوطه است
+        InternalResourceViewResolver bean=new InternalResourceViewResolver();
+        bean.setPrefix("/WEB-INF/views/");
+        bean.setSuffix(".jsp");
+        return bean;
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("/resource/");
+    }
+}

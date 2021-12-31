@@ -1,0 +1,20 @@
+<!--همانطور که مشاهده می شود، ما از نماد Thymeleaf، یعنی ${…} برای متغیرها و #{…} برای رشته های محلی استفاده کرده ایم.
+
+از آنجایی که موتور قالب به درستی پیکربندی شده است، استفاده از آن بسیار ساده است: ما فقط یک شی Context ایجاد می کنیم که حاوی متغیرهای قالب است (در اینجا به عنوان نقشه ارسال می شود).
+
+سپس، آن را به همراه نام قالب به متد فرآیند ارسال می کنیم:-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <p th:text="#{greetings(${recipientName})}"></p>
+    <p th:text="${text}"></p>
+    <p th:text="#{regards}"></p>
+    <p>
+      <em th:text="#{signature(${senderName})}"></em> <br />
+      <img src="cid:attachment.png" />
+    </p>
+  </body>
+</html>
