@@ -45,7 +45,7 @@ public class MailController {
         //Simple email
 //کلاس send.jsp برای مقدار دهی متغیر ها از این بلاک استفاده میکنه
         Map<String, String> props = new HashMap<>();
-        props.put("headerText", "Send Simple Emailllllllllllllllllllllllllllllllllllllllllll");
+        props.put("headerText", "Send Simple Email");
         props.put("messageLabel", "Message");
         props.put("additionalInfo", "");
         labels.put("send", props);

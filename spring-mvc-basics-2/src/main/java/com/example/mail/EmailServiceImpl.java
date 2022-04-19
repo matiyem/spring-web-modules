@@ -30,7 +30,7 @@ import java.util.Map;
  **/
 @Service("EmailService")
 public class EmailServiceImpl implements EmailService{
-    private static final String NOREPLY_ADDRESS="alai@behsazan.net";
+    private static final String NOREPLY_ADDRESS="hegor212@gmail.com";
 
     @Autowired
     private JavaMailSender emailSender;
